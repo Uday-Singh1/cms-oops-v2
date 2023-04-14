@@ -1,0 +1,79 @@
+Index.php
+
+require("./db.php");
+require("./gebruiker.php");
+
+$connectionDB = new Database("localhost","cms-oops","root","");
+$connectionDB->connect();
+
+$gebruikerDB = new Gebruiker("Uday","hallo");
+
+
+
+
+
+Gebruiker.php
+
+ class Gebruiker{
+     public $userName = ""; // root
+     public $password  = ""; // ""
+
+     function __construct($userName,$password){
+         $this->userName   = $userName;
+         $this->password   = $password;
+         echo "Welkom {$this->userName}";
+     }
+ }
+
+
+
+Roles.php
+
+ class Role{
+     public $name = "viewer"; // Admin
+     public $number  = "0"; // Moderator
+
+
+     function __construct($name,$number){
+         $this->name   = $name;
+         $this->number   = $number;
+         echo "Welkom {$this->name}";
+     }
+
+     
+}
+
+
+
+
+DB.php
+
+
+class Database{
+    public $serverName = ""; // localhost
+    public $dbName = "";  // cms
+    public $userName = ""; // root
+    public $password  = ""; // ""
+
+    function __construct($serverName,$dbName,$userName,$password){
+        $this->serverName = $serverName;
+        $this->dbName     = $dbName;
+        $this->userName   = $userName;
+        $this->password   = $password;
+    }
+  
+function connect(){
+    try{
+        $conn = new PDO ("mysql:host=localhost;dbName=cms-oop", "root", "");
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected Succesfully";
+}       catch(PDOException $e){
+        echo "connection failed:" . $e->getMessage();
+    }
+
+
+
+}
+
+}
