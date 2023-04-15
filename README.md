@@ -2,7 +2,7 @@
 
 
 Onderdeel Rollen en rechten &nbsp;
--Uday Singh 
+-Uday Singh &nbsp;
 
 op regel 28 van *main.php* geef je een nummer aan, vervolgens open je main.php op een browser en op basis van je aangegeven nummer zie je de pagina.        Hier heb je 3 voorbeelden: 
 - [6] is een gebruiker &nbsp;
